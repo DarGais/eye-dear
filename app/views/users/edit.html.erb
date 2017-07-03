@@ -3,6 +3,12 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <br><a href="http://gravatar.com/emails" target="_blank">change</a>
+    </div>    
+    <br><br><br>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
@@ -18,12 +24,9 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Save changes", class: "btn btn-custom" %>
     <% end %>
 
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
-    </div>
+    
   </div>
 </div>

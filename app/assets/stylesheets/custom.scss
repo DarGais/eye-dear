@@ -1,12 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
  
-$gray-medium-light: #eaeaea;
+$jet            : #333333;
+$turqoise       : #48e5c2;
+$snow           : #fcfaf9;
+$dutch-white    : #f3d3bd;
+$ebony          : #5e5e5e;
+$mid-yellow-red : #f2ad80;
 
 /* universal */
 
 body {
   padding-top: 60px;
+  background-color: $snow;
 }
 
 section {
@@ -35,6 +41,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color: $turqoise;
 }
 
 h2 {
@@ -43,12 +50,13 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  color: $ebony;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: $ebony;
 }
 
 /* header */
@@ -57,13 +65,13 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: $turqoise;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-   color: white;
+   color: $dutch-white;
    text-decoration: none;
   }
 }
@@ -73,12 +81,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  border-top: 1px solid $turqoise;
+  color: $ebony;
   a {
-  	color: $gray;
+  	color: $ebony;
   	&:hover {
-   		color: $gray-darker;
+   		color: $ebony;
   	}
   }
 }
@@ -148,7 +156,7 @@ aside {
 }
 
 .gravatar_edit {
-  margin-top: 15px;
+  margin-top: 0px;
 }
 
 /* forms */
@@ -204,3 +212,50 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/*custom*/
+
+  .dropdown-menu, .dropdown-menu li a {
+    color: $snow;
+    text-decoration: none;
+    background-color: $ebony; /*dropdown bg colour*/
+    &:hover{
+      color: $dutch-white;
+      background-color: $ebony; 
+    }
+  }
+
+  .navbar { 
+  color: $snow;   
+  background: $jet;
+    .navbar-nav li a {
+      color: $snow;
+      &:hover {
+        color: $dutch-white;
+        background-color: transparent;
+      }
+      &:focus {
+        color: $dutch-white;
+        background-color: transparent;
+      }
+      &:active {
+        color: $dutch-white;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .jumbotron {
+    color: $turqoise;
+  }
+
+  .btn-custom {
+    color: $snow;
+    background-color: $mid-yellow-red;
+    &:hover{
+      color: $snow; 
+      background-color: $dutch-white;
+    }
+  }
+
+  
