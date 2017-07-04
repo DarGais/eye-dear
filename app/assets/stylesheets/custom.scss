@@ -147,16 +147,45 @@ aside {
       margin-bottom: 3px;
       margin-top: 0px;
     }
+    h2 {
+      font-size: 1.2em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
   }
+}
+
+.gravatar_header {
+  margin-top: -15px;  
+  margin-bottom: -15px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
 }
 
 .gravatar {
   float: left;
-  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
 }
 
 .gravatar_edit {
+  float: left;
+  position: relative;
+  left: 40%;
   margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  a{
+    margin-left: 25px;
+  }
 }
 
 /* forms */
@@ -205,7 +234,7 @@ input {
 
 .users {
   list-style: none;
-  margin: 0;
+  margin-right:0px;
   li {
     overflow: auto;
     padding: 10px 0;
@@ -257,5 +286,6 @@ input {
       background-color: $dutch-white;
     }
   }
+
 
   

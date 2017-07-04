@@ -1,13 +1,16 @@
 <div class="center jumbotron">
   <h1>Welcome to Eye-Dear App</h1>
 
-  <h2>
-    This is the home page for the
-    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
+  <h2>     
+  	<% if logged_in? %>
+  		<%= current_user.name %>
+  	<% else %>
+  		This is the home page for the
+    	<a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+    	sample application.
+  		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-custom" %>
+  	<% end %>
   </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-custom" %>
 </div>
 <!--
 <%= link_to image_tag("rails.png", alt: "Rails logo"),
