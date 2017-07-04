@@ -1,0 +1,2 @@
+json.extract! sensor_value, :id, :value1, :value2, :value3, :value4, :value5, :value6, :value7, :value8, :timestamp, :channel_id, :created_at, :updated_at
+json.url sensor_value_url(sensor_value, format: :json)

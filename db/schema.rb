@@ -10,7 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630040737) do
+ActiveRecord::Schema.define(version: 20170704083624) do
+
+  create_table "channels", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "field1_name"
+    t.boolean  "field1_enable"
+    t.string   "field2_name"
+    t.boolean  "field2_enable"
+    t.string   "field3_name"
+    t.boolean  "field3_enable"
+    t.string   "field4_name"
+    t.boolean  "field4_enable"
+    t.string   "field5_name"
+    t.boolean  "field5_enable"
+    t.string   "field6_name"
+    t.boolean  "field6_enable"
+    t.string   "field7_name"
+    t.boolean  "field7_enable"
+    t.string   "field8_name"
+    t.boolean  "field8_enable"
+    t.string   "api_key"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_channels_on_user_id"
+  end
+
+  create_table "sensor_values", force: :cascade do |t|
+    t.float    "value1"
+    t.float    "value2"
+    t.float    "value3"
+    t.float    "value4"
+    t.float    "value5"
+    t.float    "value6"
+    t.float    "value7"
+    t.float    "value8"
+    t.datetime "timestamp"
+    t.integer  "channel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id"], name: "index_sensor_values_on_channel_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
