@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  field1_name: MyString
+  field1_enable: false
+  field2_name: MyString
+  field2_enable: false
+  field3_name: MyString
+  field3_enable: false
+  field4_name: MyString
+  field4_enable: false
+  field5_name: MyString
+  field5_enable: false
+  field6_name: MyString
+  field6_enable: false
+  field7_name: MyString
+  field7_enable: false
+  field8_name: MyString
+  field8_enable: false
+  api_key: MyString
+  user: one
+
+two:
+  name: MyString
+  description: MyText
+  field1_name: MyString
+  field1_enable: false
+  field2_name: MyString
+  field2_enable: false
+  field3_name: MyString
+  field3_enable: false
+  field4_name: MyString
+  field4_enable: false
+  field5_name: MyString
+  field5_enable: false
+  field6_name: MyString
+  field6_enable: false
+  field7_name: MyString
+  field7_enable: false
+  field8_name: MyString
+  field8_enable: false
+  api_key: MyString
+  user: two

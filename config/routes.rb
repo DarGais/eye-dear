@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sensor_values
+  resources :channels
   get 'password_resets/new'
 
   get 'password_resets/edit'

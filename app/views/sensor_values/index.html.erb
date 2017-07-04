@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sensor Values</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value1</th>
+      <th>Value2</th>
+      <th>Value3</th>
+      <th>Value4</th>
+      <th>Value5</th>
+      <th>Value6</th>
+      <th>Value7</th>
+      <th>Value8</th>
+      <th>Timestamp</th>
+      <th>Channel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sensor_values.each do |sensor_value| %>
+      <tr>
+        <td><%= sensor_value.value1 %></td>
+        <td><%= sensor_value.value2 %></td>
+        <td><%= sensor_value.value3 %></td>
+        <td><%= sensor_value.value4 %></td>
+        <td><%= sensor_value.value5 %></td>
+        <td><%= sensor_value.value6 %></td>
+        <td><%= sensor_value.value7 %></td>
+        <td><%= sensor_value.value8 %></td>
+        <td><%= sensor_value.timestamp %></td>
+        <td><%= sensor_value.channel %></td>
+        <td><%= link_to 'Show', sensor_value %></td>
+        <td><%= link_to 'Edit', edit_sensor_value_path(sensor_value) %></td>
+        <td><%= link_to 'Destroy', sensor_value, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sensor Value', new_sensor_value_path %>

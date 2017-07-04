@@ -1,0 +1,117 @@
+<%= form_for(channel) do |f| %>
+  <% if channel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(channel.errors.count, "error") %> prohibited this channel from being saved:</h2>
+
+      <ul>
+      <% channel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field1_name %>
+    <%= f.text_field :field1_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field1_enable %>
+    <%= f.check_box :field1_enable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field2_name %>
+    <%= f.text_field :field2_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field2_enable %>
+    <%= f.check_box :field2_enable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field3_name %>
+    <%= f.text_field :field3_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field3_enable %>
+    <%= f.check_box :field3_enable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field4_name %>
+    <%= f.text_field :field4_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field4_enable %>
+    <%= f.check_box :field4_enable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field5_name %>
+    <%= f.text_field :field5_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field5_enable %>
+    <%= f.check_box :field5_enable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field6_name %>
+    <%= f.text_field :field6_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field6_enable %>
+    <%= f.check_box :field6_enable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field7_name %>
+    <%= f.text_field :field7_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field7_enable %>
+    <%= f.check_box :field7_enable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field8_name %>
+    <%= f.text_field :field8_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field8_enable %>
+    <%= f.check_box :field8_enable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :api_key %>
+    <%= f.text_field :api_key %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

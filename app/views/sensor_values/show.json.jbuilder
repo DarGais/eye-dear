@@ -1,0 +1,1 @@
+json.partial! "sensor_values/sensor_value", sensor_value: @sensor_value

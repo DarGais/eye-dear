@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value1: 1.5
+  value2: 1.5
+  value3: 1.5
+  value4: 1.5
+  value5: 1.5
+  value6: 1.5
+  value7: 1.5
+  value8: 1.5
+  timestamp: 2017-07-04 17:36:24
+  channel: one
+
+two:
+  value1: 1.5
+  value2: 1.5
+  value3: 1.5
+  value4: 1.5
+  value5: 1.5
+  value6: 1.5
+  value7: 1.5
+  value8: 1.5
+  timestamp: 2017-07-04 17:36:24
+  channel: two

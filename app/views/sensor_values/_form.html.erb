@@ -1,0 +1,67 @@
+<%= form_for(sensor_value) do |f| %>
+  <% if sensor_value.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sensor_value.errors.count, "error") %> prohibited this sensor_value from being saved:</h2>
+
+      <ul>
+      <% sensor_value.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :value1 %>
+    <%= f.text_field :value1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value2 %>
+    <%= f.text_field :value2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value3 %>
+    <%= f.text_field :value3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value4 %>
+    <%= f.text_field :value4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value5 %>
+    <%= f.text_field :value5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value6 %>
+    <%= f.text_field :value6 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value7 %>
+    <%= f.text_field :value7 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value8 %>
+    <%= f.text_field :value8 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timestamp %>
+    <%= f.datetime_select :timestamp %>
+  </div>
+
+  <div class="field">
+    <%= f.label :channel_id %>
+    <%= f.text_field :channel_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

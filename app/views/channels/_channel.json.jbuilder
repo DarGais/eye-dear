@@ -1,0 +1,2 @@
+json.extract! channel, :id, :name, :description, :field1_name, :field1_enable, :field2_name, :field2_enable, :field3_name, :field3_enable, :field4_name, :field4_enable, :field5_name, :field5_enable, :field6_name, :field6_enable, :field7_name, :field7_enable, :field8_name, :field8_enable, :api_key, :user_id, :created_at, :updated_at
+json.url channel_url(channel, format: :json)
