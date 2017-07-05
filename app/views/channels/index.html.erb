@@ -2,30 +2,12 @@
 
 <h1>Channels</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Field1 name</th>
-      <th>Field1 enable</th>
-      <th>Field2 name</th>
-      <th>Field2 enable</th>
-      <th>Field3 name</th>
-      <th>Field3 enable</th>
-      <th>Field4 name</th>
-      <th>Field4 enable</th>
-      <th>Field5 name</th>
-      <th>Field5 enable</th>
-      <th>Field6 name</th>
-      <th>Field6 enable</th>
-      <th>Field7 name</th>
-      <th>Field7 enable</th>
-      <th>Field8 name</th>
-      <th>Field8 enable</th>
-      <th>Api key</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th colspan="3">Operations</th>
     </tr>
   </thead>
 
@@ -34,24 +16,6 @@
       <tr>
         <td><%= channel.name %></td>
         <td><%= channel.description %></td>
-        <td><%= channel.field1_name %></td>
-        <td><%= channel.field1_enable %></td>
-        <td><%= channel.field2_name %></td>
-        <td><%= channel.field2_enable %></td>
-        <td><%= channel.field3_name %></td>
-        <td><%= channel.field3_enable %></td>
-        <td><%= channel.field4_name %></td>
-        <td><%= channel.field4_enable %></td>
-        <td><%= channel.field5_name %></td>
-        <td><%= channel.field5_enable %></td>
-        <td><%= channel.field6_name %></td>
-        <td><%= channel.field6_enable %></td>
-        <td><%= channel.field7_name %></td>
-        <td><%= channel.field7_enable %></td>
-        <td><%= channel.field8_name %></td>
-        <td><%= channel.field8_enable %></td>
-        <td><%= channel.api_key %></td>
-        <td><%= channel.user %></td>
         <td><%= link_to 'Show', channel %></td>
         <td><%= link_to 'Edit', edit_channel_path(channel) %></td>
         <td><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
