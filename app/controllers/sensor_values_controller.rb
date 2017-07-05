@@ -14,7 +14,11 @@ class SensorValuesController < ApplicationController
 
   # GET /sensor_values/new
   def new
-    @sensor_value = SensorValue.new
+    if @channel = Channel.find(params[:channel_id])
+      @sensor_value = @channel.sensor_values.build
+    else
+      @sensor_value = SensorValue.new
+    end
   end
 
   # GET /sensor_values/1/edit
