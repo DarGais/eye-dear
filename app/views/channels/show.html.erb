@@ -10,85 +10,16 @@
   <%= @channel.description %>
 </p>
 
+<% @channel.enabled_field_numbers.each do |num| %>
 <p>
-  <strong>Field1 name:</strong>
-  <%= @channel.field1_name %>
-</p>
-
+  <strong> <%= @channel["field#{num}_name"] %> </strong>
+  <% @channel.sensor_values.each do |val| %>
 <p>
-  <strong>Field1 enable:</strong>
-  <%= @channel.field1_enable %>
+  <%= val["value#{num}"] %>
 </p>
-
-<p>
-  <strong>Field2 name:</strong>
-  <%= @channel.field2_name %>
+  <% end %>
 </p>
-
-<p>
-  <strong>Field2 enable:</strong>
-  <%= @channel.field2_enable %>
-</p>
-
-<p>
-  <strong>Field3 name:</strong>
-  <%= @channel.field3_name %>
-</p>
-
-<p>
-  <strong>Field3 enable:</strong>
-  <%= @channel.field3_enable %>
-</p>
-
-<p>
-  <strong>Field4 name:</strong>
-  <%= @channel.field4_name %>
-</p>
-
-<p>
-  <strong>Field4 enable:</strong>
-  <%= @channel.field4_enable %>
-</p>
-
-<p>
-  <strong>Field5 name:</strong>
-  <%= @channel.field5_name %>
-</p>
-
-<p>
-  <strong>Field5 enable:</strong>
-  <%= @channel.field5_enable %>
-</p>
-
-<p>
-  <strong>Field6 name:</strong>
-  <%= @channel.field6_name %>
-</p>
-
-<p>
-  <strong>Field6 enable:</strong>
-  <%= @channel.field6_enable %>
-</p>
-
-<p>
-  <strong>Field7 name:</strong>
-  <%= @channel.field7_name %>
-</p>
-
-<p>
-  <strong>Field7 enable:</strong>
-  <%= @channel.field7_enable %>
-</p>
-
-<p>
-  <strong>Field8 name:</strong>
-  <%= @channel.field8_name %>
-</p>
-
-<p>
-  <strong>Field8 enable:</strong>
-  <%= @channel.field8_enable %>
-</p>
+<% end %>
 
 <p>
   <strong>Api key:</strong>

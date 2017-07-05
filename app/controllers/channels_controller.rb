@@ -1,10 +1,11 @@
 class ChannelsController < ApplicationController
   before_action :set_channel, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user
 
   # GET /channels
   # GET /channels.json
   def index
-    @channels = Channel.all
+    @channels = current_user.channels
   end
 
   # GET /channels/1
@@ -14,7 +15,7 @@ class ChannelsController < ApplicationController
 
   # GET /channels/new
   def new
-    @channel = Channel.new
+    @channel = current_user.channels.build
   end
 
   # GET /channels/1/edit
