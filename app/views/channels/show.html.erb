@@ -20,6 +20,47 @@
   <%= @channel.user.name %>
 </p>
 
+<% @channel.enabled_field_numbers.each do |num| %>
+    <div>
+        <canvas id="sensor_chart<%= num %>" width=50 height=10></canvas>
+        <%= javascript_tag do %>
+         var color_set = ["","#de9610","#0074bf","#a0c238","#c93a40","#9460a0","#d06d8c","#546474","#33476a"];
+         var labels = [];
+         var values = [];
+         <% @channel.sensor_values.each do |val| %>
+         labels.push("<%= val.timestamp.strftime("%Y/%m/%d %H:%M:%S") %>");
+         values.push(<%= val["value#{num}"] %>);
+         <% end %>
+         var data = {
+         labels: labels,
+         datasets: [
+                 {
+                     label: "<%= @channel["field#{num}_name"] %>",
+                     fill: "false",
+                     borderColor: color_set[<%=num%>],
+                     pointBorderColor: color_set[<%=num%>],
+                     pointBackgroundColor: color_set[<%=num%>],
+                     lineTension: 0,
+                     data: values
+                 },
+             ]
+         };
+         var ctx = document.getElementById("sensor_chart<%= num %>").getContext("2d");
+         var options = {
+             title: {
+                 display: true,
+                 text: "sensor<%= num %>"
+             }
+         };
+         var lineChart = new Chart(ctx, {
+             type: 'line',
+             data: data,
+             options: options
+         });
+        <% end %>
+    </div>
+<% end %>
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
