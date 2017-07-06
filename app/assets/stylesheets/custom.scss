@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
- 
+
 $jet            : #333333;
 $turqoise       : #48e5c2;
 $snow           : #fcfaf9;
@@ -158,7 +158,7 @@ aside {
 }
 
 .gravatar_header {
-  margin-top: -15px;  
+  margin-top: -15px;
   margin-bottom: -15px;
   border-radius: 100px;
   -webkit-border-radius: 100px;
@@ -186,6 +186,44 @@ aside {
   a{
     margin-left: 25px;
   }
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }
 
 /* forms */
@@ -298,12 +336,12 @@ span.picture {
     background-color: $ebony; /*dropdown bg colour*/
     &:hover{
       color: $dutch-white;
-      background-color: $ebony; 
+      background-color: $ebony;
     }
   }
 
-  .navbar { 
-  color: $snow;   
+  .navbar {
+  color: $snow;
   background: $jet;
     .navbar-nav li a {
       color: $snow;
@@ -330,10 +368,9 @@ span.picture {
     color: $snow;
     background-color: $mid-yellow-red;
     &:hover{
-      color: $snow; 
+      color: $snow;
       background-color: $dutch-white;
     }
   }
 
 
-  

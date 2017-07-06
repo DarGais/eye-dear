@@ -51,3 +51,6 @@ bower.json
 
 # Ignore dropbox's key.
 .env
+
+# Ignore junk(?)
+.rake_tasks~

@@ -1,3 +1,4 @@
+=begin
 require 'test_helper'
 
 class SensorValuesControllerTest < ActionDispatch::IntegrationTest
@@ -46,3 +47,4 @@ class SensorValuesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to sensor_values_url
   end
 end
+=end
