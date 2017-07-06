@@ -1,3 +1,4 @@
+=begin
 require 'test_helper'
 
 class ChannelsControllerTest < ActionDispatch::IntegrationTest
@@ -46,3 +47,4 @@ class ChannelsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to channels_url
   end
 end
+=end
