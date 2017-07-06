@@ -20,36 +20,36 @@
   <%= @channel.user.name %>
 </p>
 
-<% @channel.enabled_field_numbers.each do |num| %>
+<% @channel.enabled_fields.each do |field| %>
     <div>
-        <canvas id="sensor_chart<%= num %>" width=50 height=10></canvas>
+        <canvas id="sensor_chart<%= field.index %>" width=50 height=10></canvas>
         <%= javascript_tag do %>
          var color_set = ["","#de9610","#0074bf","#a0c238","#c93a40","#9460a0","#d06d8c","#546474","#33476a"];
          var labels = [];
          var values = [];
          <% @channel.sensor_values.each do |val| %>
          labels.push("<%= val.timestamp.strftime("%Y/%m/%d %H:%M:%S") %>");
-         values.push(<%= val["value#{num}"] %>);
+         values.push(<%= val["value#{field.index}"] %>);
          <% end %>
          var data = {
          labels: labels,
          datasets: [
                  {
-                     label: "<%= @channel["field#{num}_name"] %>",
+                     label: "<%= field.name %>",
                      fill: "false",
-                     borderColor: color_set[<%=num%>],
-                     pointBorderColor: color_set[<%=num%>],
-                     pointBackgroundColor: color_set[<%=num%>],
+                     borderColor: color_set[<%= field.index %>],
+                     pointBorderColor: color_set[<%= field.index %>],
+                     pointBackgroundColor: color_set[<%= field.index %>],
                      lineTension: 0,
                      data: values
                  },
              ]
          };
-         var ctx = document.getElementById("sensor_chart<%= num %>").getContext("2d");
+         var ctx = document.getElementById("sensor_chart<%= field.index %>").getContext("2d");
          var options = {
              title: {
                  display: true,
-                 text: "sensor<%= num %>"
+                 text: "sensor<%= field.index %>"
              }
          };
          var lineChart = new Chart(ctx, {
@@ -65,8 +65,8 @@
   <thead>
     <tr>
       <th>Date</th>
-      <% @channel.enabled_field_numbers.each do |num| %>
-        <th><%= @channel["field#{num}_name"] %></th>
+      <% @channel.enabled_fields.each do |field| %>
+        <th><%= field.name %></th>
       <% end %>
     </tr>
   </thead>
@@ -74,8 +74,8 @@
     <% @channel.sensor_values.each do |val| %>
       <tr>
         <td><%= val.timestamp %></td>
-        <% @channel.enabled_field_numbers.each do |num| %>
-          <td><%= val["value#{num}"] %></td>
+        <% @channel.enabled_fields.each do |field| %>
+          <td><%= val["value#{field.index}"] %></td>
         <% end %>
       </tr>
     <% end %>
