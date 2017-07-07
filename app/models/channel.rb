@@ -26,11 +26,7 @@ class Channel < ApplicationRecord
     end.compact.sort {|a,b| a.index <=> b.index}
   end
 
-  def enabled_field_numbers
-    attribute_names.map do |col|
-      if col =~ /field(\d)+_enable/ && self[col]
-        $1
-      end
-    end.compact
+  def enabled_fields
+    fields.select {|field| field.enabled?}
   end
 end
