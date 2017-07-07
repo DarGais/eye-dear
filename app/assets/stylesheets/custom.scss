@@ -72,7 +72,6 @@ p {
   font-weight: bold;
   &:hover {
    color: $dutch-white;
-   text-decoration: none;
   }
 }
 
@@ -263,6 +262,13 @@ input {
   }
 }
 
+.checkbox2 {
+  float: left;
+  left: 40%;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
 #session_remember_me {
   width: auto;
   margin-left: 0;
@@ -328,18 +334,32 @@ span.picture {
 }
 
 
-/*custom*/
+/*dropdown*/
 
-  .dropdown-menu, .dropdown-menu li a {
+  .dropdown-menu a:hover{
+    display: block;
+    color: $dutch-white;
+    background-color: $ebony;
+  }
+
+  .dropdown-menu{
+    display: none;
     color: $snow;
-    text-decoration: none;
     background-color: $ebony; /*dropdown bg colour*/
-    &:hover{
-      color: $dutch-white;
-      background-color: $ebony;
+    & a{
+      display: block;
     }
   }
 
+  .dropdown{
+    display: inline-block;
+    &:hover .dropdown-menu{
+      display: block;
+    }
+  }
+
+
+/*custom*/
   .navbar {
   color: $snow;
   background: $jet;
@@ -373,4 +393,7 @@ span.picture {
     }
   }
 
-
+.move-left {
+    width: auto;
+    box-shadow: none;
+  }
