@@ -11,7 +11,7 @@
 <%= link_to 'Back', channels_path %>
 
 <p>
-  <strong>Api key:</strong>
+  <strong>API key:</strong>
   <%= @channel.api_key %>
 </p>
 
@@ -61,6 +61,7 @@
     </div>
 <% end %>
 
+<div class="table-responsive">
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -81,5 +82,5 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <%= link_to 'New Sensor value', new_sensor_value_path(channel_id: @channel) %>
