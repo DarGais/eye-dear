@@ -1,25 +1,42 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<form class="form-horizontal">
+
       <%= form_for(@user, url: users_path) do |f| %>
 
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <div class="form-group">
+        <%= f.label :name, class: "control-label col-sm-4" %>
+        <div class="col-sm-4">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <div class="form-group">
+        <%= f.label :email, class: "control-label col-sm-4" %>
+        <div class="col-sm-4">
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+      </div>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <div class="form-group">
+        <%= f.label :password, class: "control-label col-sm-4" %>
+        <div class="col-sm-4">
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+      </div>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.submit "Create my account", class: "btn btn-custom" %>
+      <div class="form-group">
+        <%= f.label :password_confirmation, class: "control-label col-sm-4" %>
+        <div class="col-sm-4">
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+      </div>
+      <div class="text-center">
+      <%= f.submit "Create my account", class: "btn btn-custom custom" %>
+      </div>
     <% end %>
-  </div>
-</div>
+
+</form>
