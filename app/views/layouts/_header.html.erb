@@ -1,9 +1,17 @@
+
 <header class="navbar navbar-fixed-top">
   <div class="container">
     <%= link_to "eye-dear", root_path, id: "logo" %>
 
     <nav>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <b class="caret"></b>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
@@ -30,6 +38,7 @@
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>
+      </div>
     </nav>
 
   </div>
