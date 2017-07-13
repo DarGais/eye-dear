@@ -33,7 +33,7 @@
 
          <% @channel.sensor_values.each do |val| %>
             <% if val.timestamp.to_f < time_now && val.timestamp.to_f > time_past %>
-                labels.push("<%= val.timestamp.strftime("%Y/%m/%d %H:%M:%S") %>");
+                labels.push("<%= val.timestamp.strftime("%Y/%m/%d %H:%M") %>");
                 values.push(<%= val["value#{field.index}"] %>);
             <% end %>
          <% end %>
@@ -48,7 +48,8 @@
                      pointBorderColor: color_set[<%= field.index %>],
                      pointBackgroundColor: color_set[<%= field.index %>],
                      lineTension: 0,
-                     data: values
+                     data: values,
+
                  },
              ]
          };
@@ -57,6 +58,13 @@
              title: {
                  display: true,
                  text: "sensor<%= field.index %>"
+             },
+             elements: {
+                point: {
+                    radius: 0,
+                    hitRadius: 5,
+                    hoverRadius: 5
+                }
              }
          };
          var lineChart = new Chart(ctx, {
