@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-xs-12 col-md-4">
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
@@ -28,7 +28,4 @@
   		  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-custom" %>
     </h2>
   </div>
-<!--
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %> -->
 <% end %>
