@@ -21,8 +21,8 @@
 </p>
 
 <% @channel.enabled_fields.each do |field| %>
-    <div>
-        <canvas id="sensor_chart<%= field.index %>" width=50 height=15></canvas>
+    <div class="chart-container">
+        <canvas id="sensor_chart<%= field.index %>"></canvas>
         <%= javascript_tag do %>
          var color_set = ["","#de9610","#0074bf","#a0c238","#c93a40","#9460a0","#d06d8c","#546474","#33476a"];
          var labels = [];
@@ -54,6 +54,7 @@
          };
          var ctx = document.getElementById("sensor_chart<%= field.index %>").getContext("2d");
          var options = {
+            maintainAspectRatio: false,
              title: {
                  display: true,
                  text: "sensor<%= field.index %>"
