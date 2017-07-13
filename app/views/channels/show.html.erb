@@ -22,14 +22,14 @@
 
 <% @channel.enabled_fields.each do |field| %>
     <div>
-        <canvas id="sensor_chart<%= field.index %>" width=50 height=10></canvas>
+        <canvas id="sensor_chart<%= field.index %>" width=50 height=15></canvas>
         <%= javascript_tag do %>
          var color_set = ["","#de9610","#0074bf","#a0c238","#c93a40","#9460a0","#d06d8c","#546474","#33476a"];
          var labels = [];
          var values = [];
 
          <%= time_now = Time.now.to_f %>
-         <%= time_past = 24.hours.ago.to_f %>
+         <%= time_past = 12.hours.ago.to_f %>
 
          <% @channel.sensor_values.each do |val| %>
             <% if val.timestamp.to_f < time_now && val.timestamp.to_f > time_past %>
