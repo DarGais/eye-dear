@@ -12,63 +12,63 @@
 <% end %>
 
 <div class="form-group">
-  <%= f.label :name, class: "control-label col-sm-2" %>
-  <div class="col-sm-8">
+  <%= f.label :name, class: "control-label col-sm-4" %>
+  <div class="col-sm-4">
     <%= f.text_field :name, class: 'form-control',placeholder: "Enter Channel name" %>
   </div>
 </div>
 
 <div class="form-group">
-  <%= f.label :description, class: "control-label col-sm-2" %>
-  <div class="col-sm-8">
+  <%= f.label :description, class: "control-label col-sm-4" %>
+  <div class="col-sm-4">
     <%= f.text_area :description, class: "form-control", placeholder: "Enter description" %>
   </div>
 </div>
 
 <div class="form-group">
-  <label class="control-label col-sm-2">Fields</label>
+  <label class="control-label col-sm-4">Fields</label>
   <div class="form-inline">
     <%= f.check_box :field1_enable , class: 'move-left'%>
     <%= f.text_field :field1_name, class: "form-control", placeholder: :field1_name %>
   </div>
 
-  <label class="col-sm-2"></label>
+  <label class="col-sm-4"></label>
   <div class="form-inline">
     <%= f.check_box :field2_enable , class: 'move-left'%>
     <%= f.text_field :field2_name, class: 'form-control', placeholder: :field2_name %>
   </div>
 
-  <label class="col-sm-2"></label>
+  <label class="col-sm-4"></label>
   <div class="form-inline">
     <%= f.check_box :field3_enable , class: 'move-left'%>
     <%= f.text_field :field3_name, class: 'form-control', placeholder: :field3_name %>
   </div>
 
-  <label class="col-sm-2"></label>
+  <label class="col-sm-4"></label>
   <div class="form-inline">
     <%= f.check_box :field4_enable , class: 'move-left'%>
     <%= f.text_field :field4_name, class: 'form-control', placeholder: :field4_name %>
   </div>
 
-  <label class="col-sm-2"></label>
+  <label class="col-sm-4"></label>
   <div class="form-inline">
     <%= f.check_box :field5_enable , class: 'move-left'%>
     <%= f.text_field :field5_name, class: 'form-control', placeholder: :field5_name %>
   </div>
 
-  <label class="col-sm-2"></label>
+  <label class="col-sm-4"></label>
   <div class="form-inline">
     <%= f.check_box :field6_enable , class: 'move-left'%>
     <%= f.text_field :field6_name, class: 'form-control', placeholder: :field6_name %>
   </div>
 
-  <label class="col-sm-2"></label>
+  <label class="col-sm-4"></label>
   <div class="form-inline">
     <%= f.check_box :field7_enable , class: 'move-left'%>
     <%= f.text_field :field7_name, class: 'form-control', placeholder: :field7_name %>
   </div>
 
-  <label class="col-sm-2"></label>
+  <label class="col-sm-4"></label>
   <div class="form-inline">
     <%= f.check_box :field8_enable , class: 'move-left'%>
     <%= f.text_field :field8_name, class: 'form-control', placeholder: :field8_name %>
@@ -76,13 +76,14 @@
 </div>
 
 <div class="form-group">
-  <%= f.label :api_key, class: "control-label col-sm-2" %>
-  <div class="col-sm-8">
+  <%= f.label :api_key, class: "control-label col-sm-4" %>
+  <div class="col-sm-4">
     <%= f.text_field :api_key, class: "form-control", placeholder: "Enter API key" %>
   </div>
 </div>
 
 <%= f.hidden_field :user_id %>
-
-<%= f.submit "Create channel", class: "btn btn-custom" %>
+<div class="text-center">
+  <%= f.submit "Create channel", class: "btn btn-custom custom" %>
+</div>
 <% end %>
