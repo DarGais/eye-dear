@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
-
 <% provide(:title, @channel.name) %>
 <h1><%= @channel.name %></h1>
 
-<p>
+<h2>
   <%= @channel.description %>
-</p>
+</h2>
 
-<%= link_to 'Edit', edit_channel_path(@channel) %> |
-<%= link_to 'Back', channels_path %>
-
-<p>
+<h3>
+  <strong>Channel ID:</strong>
+  <%= @channel.id %>
+</h3>
+<h3>
+  <strong>Owner:</strong>
+  <%= @channel.user.name %>
+</h3>
+<h3>
   <strong>API key:</strong>
   <%= @channel.api_key %>
-</p>
+</h3>
 
-<p>
-  <strong>User:</strong>
-  <%= @channel.user.name %>
-</p>
+<%= link_to 'Edit', edit_channel_path(@channel), class: "btn btn-custom" %>
+<%= link_to 'Back', channels_path, class: "btn btn-custom" %>
 
 <% @channel.enabled_fields.each do |field| %>
     <div class="chart-container">
