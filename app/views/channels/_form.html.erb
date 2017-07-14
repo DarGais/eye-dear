@@ -78,7 +78,7 @@
 <div class="form-group">
   <%= f.label :api_key, class: "control-label col-sm-4" %>
   <div class="col-sm-4">
-    <%= f.text_field :api_key, class: "form-control", placeholder: "Enter API key" %>
+    <%= f.text_field :api_key, class: "form-control", :value => @channel.api_key %>
   </div>
 </div>
 

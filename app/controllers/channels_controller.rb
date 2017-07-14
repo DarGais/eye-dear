@@ -16,6 +16,7 @@ class ChannelsController < ApplicationController
   # GET /channels/new
   def new
     @channel = current_user.channels.build
+    @channel.api_key = SecureRandom.hex(10)
   end
 
   # GET /channels/1/edit
