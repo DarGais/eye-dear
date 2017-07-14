@@ -33,7 +33,7 @@
 
          <% @channel.sensor_values.order(:timestamp).each do |val| %>
             <% if val.timestamp.to_f < time_now && val.timestamp.to_f > time_past %>
-                labels.push("<%= val.timestamp.strftime("%Y/%m/%d %H:%M") %>");
+                labels.push("<%= val.timestamp.strftime("%d %b %H:%M") %>");
                 values.push(<%= val["value#{field.index}"] %>);
             <% end %>
          <% end %>
