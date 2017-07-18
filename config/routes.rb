@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get    '/channels/update_fields', to: 'channels#update_fields'
+  get    '/channels/get_values', to: 'channels#get_values'
   resources :users do
     member do
       get :following, :followers

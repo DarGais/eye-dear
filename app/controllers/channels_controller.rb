@@ -1,3 +1,4 @@
+require 'date'
 class ChannelsController < ApplicationController
   before_action :set_channel, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
@@ -89,6 +90,27 @@ class ChannelsController < ApplicationController
       value7: params["field7"],
       value8: params["field8"]).save
     render(text: "200 everything's ok", status: 200)
+  end
+
+  def get_values
+    api_key = params[:api_key]
+    unless api_key
+      render(text: "404 not found API key", status: 404) and return
+    end
+
+    channel = Channel.find_by(api_key: params[:api_key])
+    unless channel
+      render(text: "401 unauthorized API key", status: 401) and return
+    end
+
+    if(params["time"] == "now")
+      send_data = channel.sensor_values.last
+    else
+      t = Time.parse(params["time"])
+      send_data = channel.sensor_values.where(timestamp: t..t+60)
+    end
+    render(json: send_data.to_json)
+
   end
 
   private
