@@ -106,7 +106,7 @@ class ChannelsController < ApplicationController
     if(params["time"] == "now")
       send_data = channel.sensor_values.last
     else
-      t = Time.parse(params["time"])
+      t = Time.zone.parse(params["time"])
       send_data = channel.sensor_values.where(timestamp: t..t+60)
     end
     render(json: send_data.to_json)
