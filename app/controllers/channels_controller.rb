@@ -107,7 +107,8 @@ class ChannelsController < ApplicationController
       send_data = channel.sensor_values.last
     else
       t = Time.zone.parse(params["time"])
-      send_data = channel.sensor_values.where(timestamp: t..t+60)
+      tmp = channel.sensor_values.where(timestamp: t..t+60)
+      send_data = tmp[0]
     end
     render(json: send_data.to_json)
 
